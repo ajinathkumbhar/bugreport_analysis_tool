@@ -25,7 +25,7 @@ def DumpBuildDetails(WS,file_buf):
     for line in file_buf:
         if patt.start_of_file.match(line):
             continue
-        if patt.start_dumpsys_meminfo.search(line):
+        if patt.start_dumpsys_critical.search(line):
             break
         f_build_details.write(line)
 
@@ -107,7 +107,6 @@ def DumpEventLogs(WS,file_buf):
                   '\n' + str(err)
         util.PLOGE(TAG,err_str)
         return False
-
     f_event_logs.write(util.get_line())
     f_event_logs.write('--- Events logs ---\n')
     f_event_logs.write(util.get_line())

@@ -13,8 +13,10 @@ pattern_bug_rpt_file_wt_txt_ext         = re.compile(r'[bugreport-]+.*[.](?=txt$
 
 
 # bugreport.txt : bugreport tag pattern
-start_of_file               = re.compile(r'^[==]+')
+start_of_file               = re.compile(r'^[=====]+')
 
+start_dumpsys_critical       = re.compile(r'^(------ DUMPSYS CRITICAL)')
+end_dumsys_critical          = re.compile(r"('DUMPSYS CRITICAL' ------)$")
 start_dumpsys_meminfo       = re.compile(r'^(------ DUMPSYS MEMINFO)')
 end_dumsys_meminfo          = re.compile(r"('DUMPSYS MEMINFO' ------)$")
 start_kernel_log            = re.compile(r'^(------ KERNEL LOG)')

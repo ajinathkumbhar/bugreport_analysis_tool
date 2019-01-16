@@ -101,6 +101,10 @@ def FilterByTagInFilesList(WS):
 
 
     for line in f_buf:
+        ## Check empty character
+        t = line.split(" ")
+        if len(t) >= 1:
+            continue
         if pattr.end_event_log.search(line):
             break
         mTag = bugClasses.Tag()
