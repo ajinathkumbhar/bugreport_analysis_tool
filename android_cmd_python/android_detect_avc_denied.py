@@ -1,5 +1,16 @@
 #!/usr/bin/env python2.7
 
+"""
+author: ajinathkumbhar@gmail.com
+usage : android_detect_avc_denied.py [-h] [--clear] [--logcatfile LOGCATFILE]
+
+optional arguments:
+  -h, --help            show this help message and exit
+  --clear               clear the log buffer before running logcat
+  --logcatfile LOGCATFILE
+                        logcat file to detect avc
+"""
+
 import sys
 import argparse
 import subprocess
@@ -115,7 +126,7 @@ def write_to_file(logcat_file, is_adb_logcat):
 
 
 def ParseArgs(argv):
-    parser = argparse.ArgumentParser(description="Process some integers.")
+    parser = argparse.ArgumentParser(description="Android avc log parser")
     parser.add_argument("--clear", action="store_true",
                         help="clear the log buffer before running logcat")
     parser.add_argument("--logcatfile", type=str, nargs=1,
